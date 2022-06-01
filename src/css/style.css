@@ -745,11 +745,19 @@ a {
 .bots a:nth-child(3) {
   background: linear-gradient(
     45deg,
+    rgb(18, 17, 17),
+    rgb(33, 33, 33),
+    rgb(10, 10, 10)
+  );
+}
+/* .bots a:nth-child(3) {
+  background: linear-gradient(
+    45deg,
     rgb(252, 92, 92),
     rgb(39, 197, 255),
     rgb(156, 69, 255)
   );
-}
+} */
 .bots a:nth-child(4) {
   background: linear-gradient(
     45deg,
@@ -774,13 +782,44 @@ a {
     rgb(255, 255, 255)
   );
 }
-.bots a:nth-child(7) {
+
+.bots #vite {
   background: linear-gradient(
     45deg,
-    rgb(18, 17, 17),
-    rgb(33, 33, 33),
-    rgb(10, 10, 10)
+    rgb(17, 71, 172),
+    rgb(15, 112, 150),
+    rgb(212, 119, 57)
   );
+}
+.bots #soon {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  height: 15rem;
+  width: 40rem;
+  border-radius: 0.5rem;
+  /* border-image-slice: 2; */
+  /* border-image-source: linear-gradient(to left, #743ad5, #d53a9d); */
+  overflow: hidden;
+  background-color: #100a1c;
+  transition: all 0.5s ease-in;
+  background: linear-gradient(
+    45deg,
+    rgb(7, 82, 168),
+    rgb(44, 8, 43),
+    rgb(146, 16, 72)
+  );
+}
+
+.bots #soon p {
+  border: solid rgba(255, 255, 255, 0.343) 1px;
+  background-color: #24134768;
+}
+
+.bots #soon img {
+  filter: drop-shadow(0 0 0.5rem rgba(76, 109, 221, 0.584));
 }
 
 .bots {
@@ -805,7 +844,7 @@ a {
   transform: none;
 }
 
-.bots a img:first-child {
+.bots img:first-child {
   border-radius: 1.2rem;
   height: 6rem;
   /* margin-left: 3rem; */
@@ -818,7 +857,7 @@ a {
   /* left: 0.1rem; */
 }
 
-.bots a img:last-child {
+.bots img:last-child {
   border-radius: 0.2rem;
   height: 20rem;
   width: 35rem;
@@ -832,7 +871,15 @@ a {
   transition: all 0.5s linear;
 }
 
-.bots a p {
+.bots #soon img:last-child {
+  width: 45rem;
+  height: auto;
+  left: 10rem;
+  opacity: 0.3;
+  filter: blur(15px);
+}
+
+.bots p {
   color: white;
   text-decoration: none;
   position: absolute;
