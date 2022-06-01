@@ -1,0 +1,162 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Georama&display=swap");
+.dot {
+  z-index: -1;
+}
+
+body {
+  margin: 0;
+}
+
+.container {
+  font: 5vmin/1.3 Serif;
+  overflow: hidden;
+  background: #0e1027;
+  width: 100vw;
+  height: 100vh;
+}
+
+.dot {
+  display: block;
+  font-size: 100px;
+  line-height: 1;
+  color: transparent;
+}
+
+.dot1::before,
+.dot1::after,
+.dot2::before,
+.dot2::after {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 3em;
+  height: 10em;
+  content: '●';
+  mix-blend-mode: screen;
+  -webkit-animation: 94s -27s move infinite ease-in-out alternate;
+          animation: 94s -27s move infinite ease-in-out alternate;
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+}
+
+.dot1::before {
+  text-shadow: 0.83626rem 3.54575rem 20px rgba(149, 0, 255, 0.9), 0.73764rem 4.06264rem 20px rgba(0, 189, 255, 0.9), 0.49393rem 4.83903rem 20px rgba(255, 253, 0, 0.9), 1.00097rem 0.0407rem 20px rgba(255, 0, 221, 0.9), 0.26476rem 0.13107rem 20px rgba(0, 255, 187, 0.9), 0.76799rem 4.80339rem 20px rgba(204, 0, 255, 0.9);
+  -webkit-animation-duration: 20s;
+          animation-duration: 20s;
+  -webkit-animation-delay: -27s;
+          animation-delay: -27s;
+}
+
+.dot1::after {
+  text-shadow: 0.79912rem 3.04119rem 20px rgba(38, 255, 0, 0.9), 1.34921rem 3.85328rem 20px rgba(133, 255, 0, 0.9), 0.17942rem 2.55555rem 20px rgba(89, 0, 255, 0.9), 1.08479rem 1.95705rem 20px rgba(0, 146, 255, 0.9), -0.34335rem 2.25641rem 20px rgba(0, 255, 197, 0.9), -0.04341rem 4.16372rem 20px rgba(0, 249, 255, 0.9);
+  -webkit-animation-duration: 20s;
+          animation-duration: 20s;
+  -webkit-animation-delay: -32s;
+          animation-delay: -32s;
+}
+
+.dot2::before {
+  text-shadow: 0.1072rem 3.86528rem 20px rgba(0, 255, 82, 0.9), 0.12986rem 1.16909rem 20px rgba(255, 0, 119, 0.9), 1.23181rem 3.70868rem 20px rgba(255, 112, 0, 0.9), 1.00425rem 0.51739rem 20px rgba(255, 246, 0, 0.9), 1.42232rem 5.06346rem 20px rgba(179, 255, 0, 0.9), 1.40117rem 1.95736rem 20px rgba(112, 255, 0, 0.9);
+  -webkit-animation-duration: 20s;
+          animation-duration: 20s;
+  -webkit-animation-delay: -23s;
+          animation-delay: -23s;
+}
+
+.dot2::after {
+  text-shadow: -0.36818rem -0.33268rem 20px rgba(0, 8, 255, 0.9), 0.28664rem 4.87023rem 20px rgba(0, 255, 96, 0.9), -0.01353rem 4.37055rem 20px rgba(0, 255, 45, 0.9), 1.30181rem 1.97744rem 20px rgba(255, 27, 0, 0.9), 0.45383rem 2.38096rem 20px rgba(250, 255, 0, 0.9), -0.06636rem 0.37825rem 20px rgba(255, 0, 220, 0.9);
+  -webkit-animation-duration: 20s;
+          animation-duration: 20s;
+  -webkit-animation-delay: -19s;
+          animation-delay: -19s;
+}
+
+@-webkit-keyframes move {
+  from {
+    -webkit-transform: rotate(0deg) scale(10) translateX(0px);
+            transform: rotate(0deg) scale(10) translateX(0px);
+  }
+  to {
+    -webkit-transform: rotate(360deg) scale(40) translateX(0px);
+            transform: rotate(360deg) scale(40) translateX(0px);
+  }
+}
+
+@keyframes move {
+  from {
+    -webkit-transform: rotate(0deg) scale(10) translateX(0px);
+            transform: rotate(0deg) scale(10) translateX(0px);
+  }
+  to {
+    -webkit-transform: rotate(360deg) scale(40) translateX(0px);
+            transform: rotate(360deg) scale(40) translateX(0px);
+  }
+}
+
+.bubbles {
+  overflow-x: clip;
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1rem;
+  background: rgba(46, 40, 125, 0);
+  -webkit-filter: url("#blob");
+          filter: url("#blob");
+}
+
+.bubbles .bubble {
+  position: absolute;
+  left: var(--position, 50%);
+  background: #2e287d;
+  border-radius: 100%;
+  -webkit-animation: bubble-size var(--time, 4s) ease-in infinite var(--delay, 0s), bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s);
+          animation: bubble-size var(--time, 4s) ease-in infinite var(--delay, 0s), bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s);
+  -webkit-transform: translate(-50%, 100%);
+          transform: translate(-50%, 100%);
+}
+
+@-webkit-keyframes bubble-size {
+  0%,
+  75% {
+    width: var(--size, 4rem);
+    height: var(--size, 4rem);
+  }
+  100% {
+    width: 0rem;
+    height: 0rem;
+  }
+}
+
+@keyframes bubble-size {
+  0%,
+  75% {
+    width: var(--size, 4rem);
+    height: var(--size, 4rem);
+  }
+  100% {
+    width: 0rem;
+    height: 0rem;
+  }
+}
+
+@-webkit-keyframes bubble-move {
+  0% {
+    bottom: -3rem;
+  }
+  100% {
+    bottom: var(--distance, 10rem);
+  }
+}
+
+@keyframes bubble-move {
+  0% {
+    bottom: -3rem;
+  }
+  100% {
+    bottom: var(--distance, 10rem);
+  }
+}
+/*# sourceMappingURL=background.css.map */

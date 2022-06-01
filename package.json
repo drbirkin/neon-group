@@ -1,0 +1,19 @@
+{
+  "name": "neon",
+  "version": "1.0.0",
+  "description": "homepage",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "author": "niaguman",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.5.0"
+  },
+  "dependencies": {
+    "scrollmagic": "^2.0.8",
+    "three": "^0.140.2",
+    "threejs-toys": "0.0.5"
+  }
+}
