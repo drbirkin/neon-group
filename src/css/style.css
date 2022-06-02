@@ -488,6 +488,11 @@ h4 {
   background-color: rgb(44, 73, 178);
   background: linear-gradient(190deg, #cb72ff, rgb(44, 73, 178));
 }
+
+.container .card:nth-child(4) .face.face1 {
+  background-color: rgb(44, 73, 178);
+  background: linear-gradient(190deg, #72c9ff, rgb(44, 73, 178));
+}
 .container .card:last-child .face.face1 {
   background-color: rgb(28, 157, 121);
   background: linear-gradient(190deg, #72d5ff, rgb(28, 157, 121));
