@@ -52,6 +52,20 @@ main {
   overflow-y: hidden;
 }
 
+.loader {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9;
+  height: 100vh;
+  background-color: black;
+}
+
+.loader svg {
+  height: 10rem;
+}
+
 .navbar {
   position: fixed;
   top: 0;
@@ -1370,6 +1384,10 @@ a {
 
   .intro {
     background-color: #000000b3 !important;
+  }
+
+  .intro .introSec {
+    padding-bottom: 3rem;
   }
   .intro img {
     display: none;

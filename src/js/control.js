@@ -1,3 +1,4 @@
+import { loaderView } from './view/spinnerView.js'
 import { scrollView } from './view/scrollView.js'
 import { menuIconView } from './view/menuView.js'
 import { cardView } from './view/featuresView.js'
@@ -6,6 +7,9 @@ import { neonCursor } from 'threejs-toys'
 // import { textControl } from './view/waveView.js'
 
 // console.log(window.innerWidth)
+window.onload = function () {
+  loaderView()
+}
 menuIconView()
 scrollView()
 const width =
