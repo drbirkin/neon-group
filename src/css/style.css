@@ -617,7 +617,8 @@ h4 {
     inset -20px 0 80px #0ff, inset 20px 0 300px #f0f, inset -20px 0 300px #0ff,
     0 0 50px #fff, -10px 0 80px #f0f, 10px 0 80px #0ff;
 }
-.container .card:active .face.face1 {
+
+.container .cardShow .face.face1 {
   transform: translateY(0);
   box-shadow: inset 0 0 60px whitesmoke, inset 20px 0 80px #f0f,
     inset -20px 0 80px #0ff, inset 20px 0 300px #f0f, inset -20px 0 300px #0ff,
@@ -633,7 +634,7 @@ h4 {
 .container .card:hover .face.face1 .content {
   opacity: 1;
 }
-.container .card:active .face.face1 .content {
+.container .cardShow .face.face1 .content {
   opacity: 1;
 }
 
@@ -683,12 +684,12 @@ h4 {
   font-size: 4rem;
   transition: all 0.25s ease-out;
 }
-.container .card:active .face.face2 {
+.container .cardShow .face.face2 {
   transform: translateY(0);
   opacity: 1;
 }
 
-.container .card:active .face .content i {
+.container .cardShow .face .content i {
   font-size: 4rem;
   transition: all 0.25s ease-out;
 }
@@ -1368,7 +1369,7 @@ a {
   .intro .logo {
     height: 6rem;
     z-index: 4;
-    top: 12rem;
+    top: 16rem;
     position: absolute;
   }
   .intro .neon-button {
@@ -1490,6 +1491,9 @@ a {
   #twitter,
   #instagram {
     font-size: 3.5rem;
+  }
+  .bubbles {
+    display: none;
   }
 
   .footer p {
