@@ -1,4 +1,4 @@
-import { loaderView } from './view/spinnerView.js'
+import { loaderView, removeLoader } from './view/spinnerView.js'
 import { scrollView } from './view/scrollView.js'
 import { menuIconView } from './view/menuView.js'
 import { cardView } from './view/featuresView.js'
@@ -9,6 +9,7 @@ import { neonCursor } from 'threejs-toys'
 // console.log(window.innerWidth)
 window.onload = function () {
   loaderView()
+  removeLoader()
 }
 menuIconView()
 scrollView()
@@ -18,7 +19,7 @@ const width =
   document.body.clientWidth
 
 // console.log(width)
-if (width > 500) {
+if (width > 900) {
   neonCursor({
     el: document.querySelector('main'),
     shaderPoints: 16,

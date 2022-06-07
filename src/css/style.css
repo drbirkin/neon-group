@@ -154,6 +154,50 @@ main {
 
 /* KEYFRAME ANIMATIONS */
 
+@-webkit-keyframes loader-1-outter {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loader-1-outter {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes loader-1-inner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes loader-1-inner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+  }
+}
+
 @-webkit-keyframes gradbar {
   0% {
     background-position: 0% 50%;
@@ -583,6 +627,7 @@ h4 {
   flex-wrap: wrap;
   height: 30rem;
   overflow: visible;
+  background-color: transparent;
   margin: 10rem 0 15rem 0;
 }
 
@@ -1254,26 +1299,15 @@ a {
     height: 15rem;
     z-index: 4;
   }
-
   /* .intro .neon-button {
     bottom: 18rem;
   } */
-
-  .wave-section {
-    z-index: 3;
-    width: 100%;
-    position: relative;
-    top: -4.6rem;
-  }
-
   .intro h2 {
     font-size: 20rem;
   }
-
   .intro span:nth-child(2) {
     font-size: 25rem;
   }
-
   .intro span:last-child {
     font-size: 20rem;
     right: -16rem;
@@ -1281,13 +1315,34 @@ a {
     white-space: nowrap;
   }
 
+  .wave-section {
+    z-index: 3;
+    width: 100%;
+    position: relative;
+    top: -8rem;
+  }
+  .features .container {
+    margin: 10rem 0 52rem;
+  }
+  .features .overlay {
+    top: 1.38rem;
+  }
+  .features .card {
+    margin: 3rem;
+  }
   .features .about p {
     right: -10rem;
   }
 }
 
+@media only screen and (max-width: 1800px) {
+  .features .about p {
+    right: -1rem;
+  }
+}
+
 /* Sm */
-@media only screen and (max-width: 1400px) {
+@media only screen and (max-width: 1600px) {
   .intro .logo {
     height: 13rem;
     z-index: 4;
@@ -1301,7 +1356,7 @@ a {
     z-index: 3;
     width: 100%;
     position: relative;
-    top: -2.8rem;
+    top: -7.05rem;
   }
 
   .intro h2 {
@@ -1535,5 +1590,25 @@ a {
   .footer img {
     width: 1.35rem;
     margin-right: 1rem;
+  }
+}
+
+@media only screen and (min-width: 700px) and (max-width: 900px) {
+  .features h2 {
+    margin-top: 7rem;
+  }
+
+  .features .container {
+    margin: 2rem 0 57rem;
+  }
+
+  .features .container .card {
+    margin: 1rem;
+    margin-top: 8rem;
+    height: 18rem;
+  }
+
+  .card .face1 .content {
+    height: 11vh;
   }
 }
