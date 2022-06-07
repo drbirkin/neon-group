@@ -1311,10 +1311,13 @@ a {
 }
 /* S */
 @media only screen and (max-width: 500px) {
-  .intro .logo {
-    height: 6rem;
-    z-index: 4;
-    position: absolute;
+  h2 {
+    line-height: 3rem !important;
+    font-size: 2.5rem;
+  }
+  h4 {
+    font-size: 1rem;
+    padding: 0 0.8rem;
   }
 
   .navbar {
@@ -1325,25 +1328,47 @@ a {
     justify-content: flex-end;
     align-items: center;
   }
-
   .navbar .menu-toggle {
     display: block;
   }
-
   .menu-toggle {
     justify-self: end;
     margin-right: 2rem;
     display: none;
     /* margin-left: auto; */
   }
-
   .navbar ul {
     display: none;
   }
 
+  .intro {
+    background-color: #000000b3 !important;
+  }
+  .intro img {
+    display: none;
+  }
+  .intro .logo {
+    height: 6rem;
+    z-index: 4;
+    top: 12rem;
+    position: absolute;
+  }
   .intro .neon-button {
-    bottom: 11rem;
+    /* bottom: 15rem; */
     font-size: 1.2rem;
+  }
+  .intro h2 {
+    font-size: 13rem;
+    line-height: 155%;
+  }
+  .intro span:nth-child(2) {
+    font-size: 18rem;
+  }
+  .intro span:last-child {
+    font-size: 13rem;
+    right: -16rem;
+    /* color: white; */
+    white-space: nowrap;
   }
 
   .wave-section {
@@ -1351,46 +1376,18 @@ a {
     width: 100%;
     position: relative;
     top: -7rem;
+    display: none;
   }
-
   .waves {
     height: 10rem;
     min-height: 40px;
   }
-
-  .intro h2 {
-    font-size: 13rem;
-    line-height: 155%;
-  }
-
-  .intro span:nth-child(2) {
-    font-size: 18rem;
-  }
-
-  .intro span:last-child {
-    font-size: 13rem;
-    right: -16rem;
-    /* color: white; */
-    white-space: nowrap;
-  }
-  h2 {
-    line-height: 3rem !important;
-    font-size: 2.5rem;
-  }
-
-  h4 {
-    font-size: 1rem;
-    padding: 0 0.8rem;
-  }
-
   .features h2 {
     margin-top: 0;
   }
-
   .features .overlay {
-    top: 2.38rem;
+    top: 0;
   }
-
   .features .container {
     height: 50rem;
     flex-wrap: wrap;
@@ -1400,7 +1397,6 @@ a {
     display: flex;
     overflow: visible;
   }
-
   .container .card .face {
     width: 16rem;
     height: 200px;
@@ -1413,16 +1409,13 @@ a {
   .card .face2 .content {
     height: 100%;
   }
-
   .container .card {
     margin: 0;
   }
-
   .container .card:hover .face .content i {
     font-size: 3.5rem;
     transition: all 0.25s ease-out;
   }
-
   .container .card .face.face1 {
     height: 13rem;
     align-items: center;
@@ -1433,12 +1426,10 @@ a {
     align-items: center;
     justify-content: center;
   }
-
   .features .about {
     display: flex;
     flex-direction: column;
   }
-
   .features .about p {
     font-size: 1.2rem;
     bottom: 18rem;
@@ -1446,7 +1437,6 @@ a {
     text-align: right;
     width: auto;
   }
-
   .features .about img {
     height: 21rem;
     bottom: 13.5rem;
@@ -1478,6 +1468,11 @@ a {
     height: auto;
     flex-direction: column;
   }
+  #email,
+  #twitter,
+  #instagram {
+    font-size: 3.5rem;
+  }
 
   .footer p {
     font-size: 0.8rem;
@@ -1489,7 +1484,6 @@ a {
     left: 1rem;
     font-size: 1.5rem;
   }
-
   .footer img {
     width: 1.35rem;
     margin-right: 1rem;
