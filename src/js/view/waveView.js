@@ -14,21 +14,21 @@ neonCursor({
   sleepTimeCoefY: 0.0025,
 })
 
-const luminate = document.querySelector('.intro span:first-child')
-const success = document.querySelector('.intro span:last-child')
+// const luminate = document.querySelector('.intro span:first-child')
+// const success = document.querySelector('.intro span:last-child')
 
-export const textControl = function () {
-  setInterval(() => {
-    const lumOpacity = parseInt(
-      window.getComputedStyle(luminate).getPropertyValue('opacity')
-    )
-    if (lumOpacity !== 0) luminate.style.opacity = '0'
-    else luminate.style.opacity = '1'
+// export const textControl = function () {
+//   setInterval(() => {
+//     const lumOpacity = parseInt(
+//       window.getComputedStyle(luminate).getPropertyValue('opacity')
+//     )
+//     if (lumOpacity !== 0) luminate.style.opacity = '0'
+//     else luminate.style.opacity = '1'
 
-    const sucOpacity = parseInt(
-      window.getComputedStyle(success).getPropertyValue('opacity')
-    )
-    if (sucOpacity !== 0) success.style.opacity = '0'
-    else success.style.opacity = '1'
-  }, 10000)
-}
+//     const sucOpacity = parseInt(
+//       window.getComputedStyle(success).getPropertyValue('opacity')
+//     )
+//     if (sucOpacity !== 0) success.style.opacity = '0'
+//     else success.style.opacity = '1'
+//   }, 10000)
+// }
