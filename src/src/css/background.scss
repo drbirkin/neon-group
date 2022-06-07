@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Georama&display=swap');
+@mixin dots($count) {
+  $text-shadow: ();
+  @for $i from 0 through $count {
+    $text-shadow: $text-shadow,
+      (-0.5+ (random()) * 2) +
+        rem
+        (-0.5+ (random()) * 6) +
+        rem
+        20px
+        hsla(random() * 360, 100%, 50%, 0.9);
+  }
+  text-shadow: $text-shadow;
+}
+.dot {
+  z-index: -1;
+}
+body {
+  margin: 0;
+}
+.container {
+  font: 5vmin/1.3 Serif;
+  overflow: hidden;
+  background: #0e1027;
+  width: 100vw;
+  height: 100vh;
+}
+
+.dot {
+  display: block;
+  font-size: 100px;
+  line-height: 1;
+  color: transparent;
+}
+
+.dot1::before,
+.dot1::after,
+.dot2::before,
+.dot2::after {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 3em;
+  height: 10em;
+  content: '●';
+  mix-blend-mode: screen;
+  animation: 94s -27s move infinite ease-in-out alternate;
+  transform-origin: 0 0;
+}
+
+.dot1::before {
+  @include dots(5);
+  animation-duration: 20s;
+  animation-delay: -27s;
+}
+
+.dot1::after {
+  @include dots(5);
+  animation-duration: 20s;
+  animation-delay: -32s;
+}
+
+.dot2::before {
+  @include dots(5);
+  animation-duration: 20s;
+  animation-delay: -23s;
+}
+
+.dot2::after {
+  @include dots(5);
+  animation-duration: 20s;
+  animation-delay: -19s;
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg) scale(10) translateX(0px);
+  }
+  to {
+    transform: rotate(360deg) scale(40) translateX(0px);
+  }
+}
+
+.bubbles {
+  overflow-x: clip;
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1rem;
+  background: rgba(46, 40, 125, 0);
+  filter: url('#blob');
+  .bubble {
+    position: absolute;
+    left: var(--position, 50%);
+    background: rgb(46, 40, 125);
+    border-radius: 100%;
+    animation: bubble-size var(--time, 4s) ease-in infinite var(--delay, 0s),
+      bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s);
+    transform: translate(-50%, 100%);
+  }
+}
+
+@keyframes bubble-size {
+  0%,
+  75% {
+    width: var(--size, 4rem);
+    height: var(--size, 4rem);
+  }
+  100% {
+    width: 0rem;
+    height: 0rem;
+  }
+}
+@keyframes bubble-move {
+  0% {
+    bottom: -3rem;
+  }
+  100% {
+    bottom: var(--distance, 10rem);
+  }
+}
