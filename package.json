@@ -12,6 +12,7 @@
     "parcel": "^2.5.0"
   },
   "dependencies": {
+    "dotenv": "^16.0.1",
     "scrollmagic": "^2.0.8",
     "three": "^0.140.2",
     "threejs-toys": "0.0.5"

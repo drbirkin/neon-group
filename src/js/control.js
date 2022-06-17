@@ -2,6 +2,7 @@ import { loaderView, removeLoader } from './view/spinnerView.js'
 import { scrollView } from './view/scrollView.js'
 import { menuIconView } from './view/menuView.js'
 import { cardView } from './view/featuresView.js'
+import { metaLabs } from './view/smartButtonView'
 import { neonCursor } from 'threejs-toys'
 
 // import { textControl } from './view/waveView.js'
@@ -36,3 +37,9 @@ if (width > 900) {
 } else {
   cardView()
 }
+
+metaLabs('neongroup.hyper.co', {
+  purchaseButtonId: 'purchaseButton',
+  outOfStockText: 'Join Waitlist',
+  inStockText: 'Purchase for $28.99',
+})
