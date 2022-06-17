@@ -40,6 +40,6 @@ if (width > 900) {
 
 metaLabs('neongroup.hyper.co', {
   purchaseButtonId: 'purchaseButton',
-  outOfStockText: 'Join Waitlist',
+  outOfStockText: 'OOS - Join Waitlist',
   inStockText: 'Purchase for $28.99',
 })
