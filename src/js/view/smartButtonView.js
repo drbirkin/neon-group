@@ -22,7 +22,7 @@ const smartButtonStyleView = () => {
   // smartButton.removeAttribute('href')
   if (buttonContent.startsWith('Purchase'))
     smartButton.classList.add('purchase')
-  else if (buttonContent.startsWith('Join'))
+  else if (buttonContent.startsWith('OOS'))
     smartButton.setAttribute('href', 'https://forms.gle/Sr5LqFtBsG3ETwUJ8')
   // console.log(smartButton.innerText.startsWith('Purchase'))
 }
