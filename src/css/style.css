@@ -53,6 +53,11 @@ main {
   overflow-y: hidden;
 }
 
+.invalid {
+  background-color: #201e40;
+  color: white;
+}
+
 .loader {
   position: relative;
   display: flex;
