@@ -2,11 +2,15 @@ import { loaderView, removeLoader } from './view/spinnerView.js'
 import { scrollView } from './view/scrollView.js'
 import { menuIconView } from './view/menuView.js'
 import { cardView } from './view/featuresView.js'
+import { errorPageView } from './view/pageErrorView.js'
 import { metaLabs } from './view/smartButtonView'
 import { neonCursor } from 'threejs-toys'
 
 // import { textControl } from './view/waveView.js'
 
+const url = window.location.href
+console.log(url)
+errorPageView(url)
 // console.log(window.innerWidth)
 window.onload = function () {
   loaderView()
