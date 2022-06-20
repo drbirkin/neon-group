@@ -1342,6 +1342,8 @@ a {
 .footer a {
   color: white;
   text-decoration: none;
+}
+.footer a.errorPage {
   pointer-events: none;
 }
 
