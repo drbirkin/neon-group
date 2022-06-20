@@ -1340,9 +1340,14 @@ a {
   margin: 1rem 0;
 }
 
+.footer a {
+  color: white;
+  text-decoration: none;
+  pointer-events: none;
+}
+
 .footer .details a {
   color: rgb(255, 205, 205);
-  text-decoration: none;
   margin: 0.5rem 0.5rem;
 }
 
