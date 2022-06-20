@@ -20,8 +20,7 @@ body {
   background-attachment: fixed;
   color: #a2d7ff90;
   height: 100%;
-  overflow-x: hidden;
-  overflow: overlay;
+  overflow: hidden;
 }
 
 /* width */
@@ -1349,6 +1348,7 @@ a {
 .footer .details a {
   color: rgb(255, 205, 205);
   margin: 0.5rem 0.5rem;
+  pointer-events: initial;
 }
 
 #reveal1 {

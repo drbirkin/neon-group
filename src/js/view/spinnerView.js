@@ -2,7 +2,7 @@ const loader = document.querySelector('.loader')
 const docContent = document.querySelector('body')
 
 export const loaderView = function () {
-  loader.style.display = 'none'
+  // loader.style.display = 'none'
   docContent.style.overflow = 'hidden'
 }
 
