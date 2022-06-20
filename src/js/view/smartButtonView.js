@@ -24,6 +24,7 @@ const smartButtonStyleView = () => {
     smartButton.classList.add('purchase')
   else if (buttonContent.startsWith('OOS'))
     smartButton.setAttribute('href', 'https://forms.gle/Sr5LqFtBsG3ETwUJ8')
+  else smartButton.setAttribute('href', '404.html')
   // console.log(smartButton.innerText.startsWith('Purchase'))
 }
 
