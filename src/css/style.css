@@ -1053,6 +1053,14 @@ a {
   );
 }
 
+.bots #trickle {
+  background: linear-gradient(
+    45deg,
+    rgb(17, 71, 172),
+    rgb(47, 156, 199),
+    rgb(181, 57, 212)
+  );
+}
 .bots #vite {
   background: linear-gradient(
     45deg,
