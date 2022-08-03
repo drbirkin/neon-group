@@ -42,4 +42,5 @@ metaLabs('neongroup.hyper.co', {
   purchaseButtonId: 'purchaseButton',
   outOfStockText: 'OOS - Join Waitlist',
   inStockText: 'Purchase for $28.99',
+  entryRaffleText: 'Enter our Raffle',
 })
