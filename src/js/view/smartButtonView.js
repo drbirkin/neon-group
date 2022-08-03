@@ -6,16 +6,13 @@ const header = {
   },
 }
 
-const buttonView = async (response, raffleData, options) => {
+const buttonView = async (response, raffle, options) => {
   const $purchaseButton = document.getElementById(options.purchaseButtonId)
-
-  if (response.status !== 200 && raffleData.status !== 200) {
+  if (response.status !== 200 && raffle.data[0].active !== true) {
     $purchaseButton.innerHTML = options.outOfStockText || 'Join Waitlist'
-    const raffle = await raffleData.json()
-    $purchaseButton.href = `https://neongroup.hyper.co/raffle/${raffle.data[0].id}`
+    $purchaseButton.href = `https://neongroup.hyper.co/waitlist`
   } else if (response.status !== 200) {
     $purchaseButton.innerHTML = options.entryRaffleText || 'Join Raffle'
-    const raffle = await raffleData.json()
     $purchaseButton.href = `https://neongroup.hyper.co/raffle/${raffle.data[0].id}`
   } else {
     const release = await response.json()
@@ -33,20 +30,17 @@ const smartButtonStyleView = () => {
   const buttonContent = smartButton.innerText
 
   smartButton.classList.remove('purchase')
-  // smartButton.removeAttribute('href')
   if (buttonContent.startsWith('Purchase') || buttonContent.startsWith('Enter'))
     smartButton.classList.add('purchase')
-  // else if (buttonContent.startsWith('OOS'))
-  //   smartButton.setAttribute('href', 'https://forms.gle/Sr5LqFtBsG3ETwUJ8')
-  // else smartButton.setAttribute('href', '404.html')
-  // console.log(smartButton.innerText.startsWith('Purchase'))
 }
 
 export const metaLabs = async function MetaLabs(portalUrl, options) {
   const res = await fetch(
     `https://${portalUrl}/api/release${window.location.search}`
   )
-  const raffleData = await fetch('https://api.hyper.co/v6/raffles', header)
+  const raffleData = await (
+    await fetch('https://api.hyper.co/v6/raffles', header)
+  ).json()
   await buttonView(res, raffleData, options)
   smartButtonStyleView()
 }
