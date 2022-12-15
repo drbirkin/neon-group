@@ -6,41 +6,26 @@ const header = {
   },
 }
 
-const buttonView = async (response, raffle, options) => {
+const buttonView = async (response, options) => {
   const $purchaseButton = document.getElementById(options.purchaseButtonId)
-  if (response.status !== 200 && raffle.data[0].active !== true) {
-    $purchaseButton.innerHTML = options.outOfStockText || 'Join Waitlist'
-    $purchaseButton.href = `https://neongroup.hyper.co/waitlist`
-  } else if (response.status !== 200) {
-    $purchaseButton.innerHTML = options.entryRaffleText || 'Join Raffle'
-    $purchaseButton.href = `https://neongroup.hyper.co/raffle/${raffle.data[0].id}`
+  // console.log(await response)
+  const { data } = await response
+  if (data.length === 0) {
+    $purchaseButton.innerHTML = options.outOfStockText || 'Out Of Stock'
+    $purchaseButton.href = ''
+    $purchaseButton.classList.remove('purchase')
   } else {
-    const release = await response.json()
-
-    if (release.out_of_stock)
-      $purchaseButton.innerHTML = options.outOfStockText || 'Out Of Stock'
-    else {
-      $purchaseButton.innerHTML = options.inStockText || 'Purchase'
-      $purchaseButton.href = release.link
-    }
+    $purchaseButton.innerHTML =
+      `${options.inStockText} $${data[0].renewal_price}/Month` || 'Purchase'
+    $purchaseButton.href = data[0].direct_link
+    $purchaseButton.classList.add('purchase')
   }
-}
-const smartButtonStyleView = () => {
-  const smartButton = document.querySelector('#purchaseButton')
-  const buttonContent = smartButton.innerText
-
-  smartButton.classList.remove('purchase')
-  if (buttonContent.startsWith('Purchase') || buttonContent.startsWith('Enter'))
-    smartButton.classList.add('purchase')
 }
 
 export const metaLabs = async function MetaLabs(portalUrl, options) {
   const res = await fetch(
-    `https://${portalUrl}/api/release${window.location.search}`
+    `https://${portalUrl}/api/v2/plans?visibility=visible`,
+    header
   )
-  const raffleData = await (
-    await fetch('https://api.hyper.co/v6/raffles', header)
-  ).json()
-  await buttonView(res, raffleData, options)
-  smartButtonStyleView()
+  await buttonView(res.json(), options)
 }

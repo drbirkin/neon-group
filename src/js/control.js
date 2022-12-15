@@ -38,9 +38,8 @@ if (width > 900) {
   cardView()
 }
 
-metaLabs('neongroup.hyper.co', {
+metaLabs('api.whop.com', {
   purchaseButtonId: 'purchaseButton',
-  outOfStockText: 'OOS - Join Waitlist',
-  inStockText: 'Purchase for $28.99',
-  entryRaffleText: 'Enter our Raffle',
+  outOfStockText: 'Join our Waitlist',
+  inStockText: 'Purchase for',
 })
