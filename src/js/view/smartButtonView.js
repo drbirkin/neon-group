@@ -7,7 +7,6 @@ const header = {
 }
 
 const buttonView = async (response, options) => {
-  console.log(process.env.SECRETKEY)
   const $purchaseButton = document.getElementById(options.purchaseButtonId)
   // console.log(await response)
   const { data } = await response
